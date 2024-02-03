@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+    
+</head>
+<body style="background-color: grey; color: white;">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" src="1.jpg" alt="photoshop" id="coding"></li>
+            <li><img src="2.png" width="200px"  alt="photoshop" id="cd"></li>
+            <li><img src="3.png" width="200px"  alt="photoshop" id="code"></li>
+            <li><img src="4.png" width="200px" alt="photoshop" id="chai"></li>
+            <li><a id="google" style="color: aliceblue;" href="https://google.com">GOOGLE</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById('coding').onclick = function(){
+    //     alert("coder clicked")
+    // }
+
+
+    // attachEvent()
+    // jQuery - on
+
+    // document.getElementById('coding').addEventListener('click', function(){
+    //     alert("coding clicked again")
+    // })
+
+
+    /* 
+    read these topics by docs 
+
+    // type, timestamp, defaultprevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keycode
+    */
+
+    // document.getElementById('coding').addEventListener('click', function(e){
+    //     console.log(e);
+    // }, false)
+    // false is default value if you not mention it it automatically takes it 
+
+    // here ture is used for capturing - means code run from upper to lower
+
+    // false is for bubbling - means it goes from bottom to top
+    // if we use e.stopPropagation() then after bubbling it doesnot goes upside
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     console.log("google clicked");
+    // })
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.parentNode);
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+    })
+    
+</script>
+</html>
