@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: grey; color: aliceblue;">
+    <h1>chai aur code</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+  
+  const sayDt = function(str){
+    console.log(str, Date.now());
+}
+
+ const  intervalId = setInterval(sayDt, 100, "hoii abhi")
+    
+ clearInterval(intervalId)
+
+    
+</script>
+</html>
