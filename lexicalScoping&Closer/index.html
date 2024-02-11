@@ -1,0 +1,41 @@
+const promiseOne = new Promise(function(resolve, reject){
+    // Do an async task
+    // DB calls, network, cryptography
+    setTimeout(function(){
+        console.log("Async task is complete");
+        resolve()  // after callaing resolve() , it connects with .then() 
+    }, 1000)
+})
+
+// .then() directly connection with resolve
+promiseOne.then(function() {
+    console.log("Promise consumed");
+})
+
+
+
+new Promise(function(resolve, reject){
+    setTimeout(function(){
+            console.log("Async task 2");
+            resolve()
+    }, 1000)
+})
+.then(function(){
+    console.log("Async 2 resolved");
+})
+
+
+
+const promiseThree = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        resolve({
+            username: "Abhijeet",
+            email: "abhijeetkv2@gmail.com"
+            })
+    }, 1000)
+}) 
+
+promiseThree.then(function(user){
+    console.log(user);
+})
+
